@@ -1,0 +1,54 @@
+package reloj;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+        Tiempo crono = new Tiempo();
+        crono.start();
+    }
+    public class Tiempo extends Thread{
+    
+    Tiempo()
+    {
+        
+    }
+    
+    @Override
+    public void run()
+    {
+        try
+        {    for(int k = 1; k <= 24; k++)
+            {
+                for (int i = 1; i <= 60; i++) 
+                {
+                    for (int j = 1; j <= 60; j++) 
+                    {
+                        sleep(1000);
+                        System.out.println(j+"seg");
+                    }
+                    System.out.println("minutos transcurridos: "+i);
+                    if(i == 60)
+                    {
+                        JOptionPane.showMessageDialog(null,"Ha pasado una hora.");
+                    }
+                }
+                if(k < 12)
+                {
+                    System.out.printf("%-3s%-3s",k,"am");
+                }
+                else
+                {
+                    System.out.printf("%-3s%-3s",k,"pm");
+                }
+            }
+        }    
+        catch(InterruptedException ex)
+        {
+        
+        }
+    }
+}   
+}
