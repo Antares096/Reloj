@@ -47,7 +47,7 @@ public class Main {
         }    
         catch(InterruptedException ex)
         {
-        
+            JOptionPane.showMessageDialog(null,"Ha ocurrido un error durante la ejecucion.","Error",JOptionPane.ERROR_MESSAGE);
         }
     }
 }   
